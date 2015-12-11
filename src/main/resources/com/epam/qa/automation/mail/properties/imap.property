@@ -1,0 +1,2 @@
+mail.imap.ssl.enable=true
+mail.imap.port=993
