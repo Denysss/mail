@@ -22,11 +22,7 @@ public class Gmail {
 	private File folderForDownloadingAttachments;
 	private String emailFolder = "inbox";
 	
-	public void copyAttachmentsFromMessagesToLocalFolder(String userEmail, String userPassword, String localPath) {
-		
-		path = localPath;
-		password = userPassword;
-		email = userEmail;
+	public void copyAttachmentsFromMessagesToLocalFolder() {
 		
 		Generator gen = new Generator();
 		gen.setEmailAddress(email);
@@ -64,6 +60,19 @@ public class Gmail {
 			e.printStackTrace();
 		}
 	}
+	
+	public void setLocalPath (String localPath) {
+		path = localPath;
+	}
+
+	public void setEmail (String userEmail) {
+		email = userEmail;
+	}
+
+	public void setPassword (String userPassword) {
+		password = userPassword;
+	}
+
 	
 	private void saveAttachmentToLocalFolder (MimeBodyPart part) {
 		if (!folderForDownloadingAttachments.exists())
